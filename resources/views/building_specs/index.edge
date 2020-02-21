@@ -1,49 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <form action="/submit-specs" method="POST">
-        {{ csrfField() }}
-        <label for="width">Width: </label><input type="text" name="width" placeholder="width"/>
-        <label for="length">Length: </label><input type="text" name="length" placeholder="length"/>
-        <label for="height">Height: </label><input type="text" name="height" placeholder="height"/>
-        <label for="color">Choose a Color:</label>
-        <select name="color">
+      {{ csrfField() }}
+      <label for="width">Width: </label
+      ><input type="text" name="width" placeholder="width" />
+      <label for="length">Length: </label
+      ><input type="text" name="length" placeholder="length" />
+      <label for="height">Height: </label
+      ><input type="text" name="height" placeholder="height" />
+      <label for="color">Choose a Color:</label>
+      <select name="color">
         <option value="red">Red</option>
         <option value="blue">Blue</option>
         <option value="green">Green</option>
-        </select>
-        <input type="submit">       
+      </select>
+      <input type="submit" />
     </form>
     <div>
-        <h1>Previously Submitted Building Specs </h1>
-        @each(buildingSpec in buildingSpecs)
-        <div>
-            <br/>
-            <h3>Building Specs </h3>
-            <div> 
-                <span>Width: </span> {{buildingSpec.width}}
-            </div>
-                
-            <div> 
-                <span>Length: </span> {{buildingSpec.length}}
-            </div>
-    
-            <div> 
-                <span>Height: </span> {{buildingSpec.height}}
-            </div>        
-    
-            <div> 
-                <span>Color: </span> {{buildingSpec.color}}
-            </div>  
-            <br/>
-        </div>
-        @endeach
-    </div>    
-</body>
+      <h1>Previously Submitted Building Specs</h1>
+      @each(buildingSpec in buildingSpecs)
+      <div>
+        <br />
+        <h3>Building Specs</h3>
+        <div><span>Width: </span> {{buildingSpec.width}}</div>
+
+        <div><span>Length: </span> {{buildingSpec.length}}</div>
+
+        <div><span>Height: </span> {{buildingSpec.height}}</div>
+
+        <div><span>Color: </span> {{buildingSpec.color}}</div>
+        <br />
+      </div>
+      @endeach
+    </div>
+  </body>
 </html>

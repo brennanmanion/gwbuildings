@@ -1,4 +1,4 @@
-'use strict'
+"use strict";
 
 /*
 |--------------------------------------------------------------------------
@@ -14,10 +14,8 @@
 */
 
 /** @type {typeof import('@adonisjs/framework/src/Route/Manager')} */
-const Route = use('Route')
+const Route = use("Route");
 
-Route.on('/').render('home')
+Route.get("/", "BuildingSpecController.index");
 
-Route.get('/building_specs','BuildingSpecController.index')
-
-Route.post('/submit-specs', 'BuildingSpecController.store')
+Route.post("/submit-specs", "BuildingSpecController.store");
